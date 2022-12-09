@@ -637,3 +637,79 @@ function oldAndLoud(person) {
 }
 
 // Test: oldAndLoud(user);
+
+////////////////////////////////////////
+// Cat Combinator
+////////////////////////////////////////
+
+// 1. Mama cat
+// Define an object called cat1 that contains the following properties: name, breed, age (a number)
+// console.log the cat's age
+// console.log the cat's breed
+
+let cat1 = {
+  name: "Puddy",
+  breed: "Calico",
+  age: 8,
+};
+
+console.log(cat1.age);
+console.log(cat1.breed);
+
+// 2. Papa cat
+// Define an object called cat2 that also contains the properties: name, breed, age (a number)
+
+let cat2 = {
+  name: "Cooper",
+  breed: "Sphynx",
+  age: 13,
+};
+
+// 3. Combine Cats!
+// Write a function combineCats that has two parameters mama, and papa. The function will take two arguments -- each a cat object.
+// Pass cat1 and cat2 as arguments to the combineCats function. The function should console.log them.
+function combineCats(arg1, arg2) {
+  console.log(arg1);
+  console.log(arg2);
+}
+
+// console.log(combineCats(cat1, cat2));
+
+// Make it so the combineCats function will return a combination of the two incoming cats
+// The result should be an object wherein the:
+// name is a concatenation of the parents' names
+// the age is 1
+// the breed is each of the parents' breeds with a hyphen in between
+
+function comebineCatsCombo(arg1, arg2) {
+  return {
+    name: arg1.name + arg2.name,
+    breed: arg1.breed + "-" + arg2.breed,
+    age: 1,
+  };
+}
+
+// console.log(comebineCatsCombo(cat1, cat2));
+
+// 4. Cat brain bender
+console.log(
+  comebineCatsCombo(
+    comebineCatsCombo(cat1, cat2),
+    comebineCatsCombo(cat1, cat2)
+  )
+);
+
+// Write a console.log that is three levels deep of combineCats. combineCats should have two arguments, each which are combineCats, each which have two arguments, each which are combineCats.
+
+console.log(
+  comebineCatsCombo(
+    comebineCatsCombo(
+      comebineCatsCombo(cat1, cat2),
+      comebineCatsCombo(cat1, cat2)
+    ),
+    comebineCatsCombo(
+      comebineCatsCombo(cat1, cat2),
+      comebineCatsCombo(cat1, cat2)
+    )
+  )
+);
